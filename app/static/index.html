@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Музыкальный шпион</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="page">
+    <div id="authScreen" class="screen auth-screen">
+      <div class="card auth-card">
+        <h1>Музыкальный шпион</h1>
+        <p class="muted">Создай комнату или войди по коду.</p>
+
+        <label class="field">
+          <span>Твой ник</span>
+          <input id="nameInput" type="text" placeholder="Например, Decay" />
+        </label>
+
+        <div class="actions vertical">
+          <button id="createRoomBtn" class="primary">Создать комнату</button>
+        </div>
+
+        <div class="separator"></div>
+
+        <label class="field">
+          <span>Код комнаты</span>
+          <input id="roomCodeInput" type="text" placeholder="Например, 4821" />
+        </label>
+
+        <div class="actions vertical">
+          <button id="joinRoomBtn" class="secondary">Войти в комнату</button>
+        </div>
+
+        <div id="createdRoomBox" class="created-room hidden">
+          <div class="muted">Комната создана. Код:</div>
+          <div id="createdRoomCode" class="room-code"></div>
+        </div>
+
+        <div id="authMessage" class="message"></div>
+      </div>
+    </div>
+
+    <div id="gameScreen" class="screen hidden">
+      <header class="topbar card">
+        <div>
+          <div class="eyebrow">Комната <span id="roomCodeLabel"></span></div>
+          <h2 id="phaseTitle">Лобби</h2>
+          <div id="statusText" class="status-text">Ждём игроков.</div>
+        </div>
+        <div class="topbar-right">
+          <div class="pill">Ты: <span id="youLabel"></span></div>
+          <div class="pill">Раунд: <span id="roundLabel"></span></div>
+          <div class="pill">Хост: <span id="hostLabel"></span></div>
+        </div>
+      </header>
+
+      <main class="main-layout">
+        <section class="left-column">
+          <div id="phasePanel" class="card"></div>
+        </section>
+
+        <aside class="right-column">
+          <div class="card sidebar-block">
+            <h3>Игроки и счёт</h3>
+            <div id="playersList"></div>
+          </div>
+          <div class="card sidebar-block">
+            <h3>Последний результат</h3>
+            <div id="lastVoteResult" class="muted">Пока нет голосований.</div>
+          </div>
+        </aside>
+      </main>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
