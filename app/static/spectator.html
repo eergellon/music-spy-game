@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Музыкальный шпион — зритель</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121933;
+      --text: #eef2ff;
+      --muted: #aab4d6;
+      --border: rgba(255, 255, 255, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: radial-gradient(circle at top, #162047, var(--bg));
+      color: var(--text);
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(18, 25, 51, 0.94);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .player {
+      color: var(--muted);
+      margin-bottom: 14px;
+      min-height: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: none;
+      border-radius: 16px;
+      background: black;
+    }
+
+    .placeholder {
+      min-height: 520px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: #05070d;
+      color: var(--muted);
+      font-size: 22px;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="card">
+      <div id="videoTitle" class="title">Ждём следующий ролик</div>
+      <div id="videoPlayerName" class="player"></div>
+      <div id="videoArea" class="placeholder">Сейчас ничего не играет</div>
+    </div>
+  </div>
+
+  <script src="/static/spectator.js"></script>
+</body>
+</html>
